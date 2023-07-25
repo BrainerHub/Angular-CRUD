@@ -1,0 +1,37 @@
+<button
+  type="button"
+  class="btn btn-primary btn-lg active float-right"
+  (click)="onAdd()"
+>
+  Add
+</button>
+<h2 class="card-header">StudentList</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Option</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let dataItem of list">
+    <td>{{ dataItem.id }}</td>
+    <td>{{ dataItem.name }}</td>
+    <td>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="onEdit(dataItem.id)"
+      >
+        Edit
+      </button>
+      <button
+        type="button"
+        class="btn btn-info"
+        (click)="onDelete(dataItem.id)"
+      >
+        Delete
+      </button>
+    </td>
+  </tbody>
+</table>
